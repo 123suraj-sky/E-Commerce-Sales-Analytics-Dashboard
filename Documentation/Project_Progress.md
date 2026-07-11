@@ -4,17 +4,17 @@ This file tracks what has been completed so far in the E-Commerce Sales Analytic
 
 ## Current Status
 
-Current phase: Phase 2 - Database Design
+Current phase: Phase 3 - Create/Import Data
 
-Last completed phase: Phase 1 - Understand the Dataset
+Last completed phase: Phase 2 - Database Design
 
 ## Phase Progress
 
 | Phase | Status | Notes |
 |---|---|---|
 | Phase 1 - Understand the Dataset | Complete | Dataset description, data dictionary, keys, relationships, and validation checks are complete. |
-| Phase 2 - Database Design | Not started | SQL schema files exist, but the database schema has not been written yet. |
-| Phase 3 - Create/Import Data | Not started | No import scripts or loaded database evidence yet. |
+| Phase 2 - Database Design | Complete | MySQL database schema has been created in `SQL/01_database_schema.sql`. |
+| Phase 3 - Create/Import Data | In progress | Staging import and verification scripts are ready; database execution is pending MySQL credentials/local run. |
 | Phase 4 - Data Quality Assessment | Not started | Phase 1 validation exists, but database-level quality checks are not started. |
 | Phase 5 - Data Cleaning | Not started | Cleaning SQL file exists but is empty. |
 | Phase 6 - Exploratory Data Analysis | Not started | No EDA queries or outputs yet. |
@@ -25,6 +25,25 @@ Last completed phase: Phase 1 - Understand the Dataset
 | Phase 11 - GitHub Polishing | Not started | Repository polish/readiness work is pending. |
 
 ## Completed Work
+
+### Phase 2 - Database Design
+
+- Created the MySQL database schema in `SQL/01_database_schema.sql`.
+- Added `CREATE DATABASE IF NOT EXISTS ecommerce_sales`.
+- Added staging tables for raw CSV imports.
+- Added clean analytical tables with primary keys, foreign keys, and basic check constraints.
+- Modeled `order_reviews` with a surrogate `review_key` because raw `review_id` is not unique.
+- Modeled geolocation with a raw staging table and an aggregated `geolocation_zip_prefixes` table because raw zip prefixes repeat.
+- Added indexes for common joins and analysis filters.
+- Kept product misspelling columns such as `product_name_lenght` and `product_description_lenght` for raw dataset traceability.
+
+### Phase 3 - Create/Import Data
+
+- Added staging import script in `SQL/phase_3_import_staging_data.sql`.
+- Added staging row-count verification script in `SQL/phase_3_verify_staging_import.sql`.
+- Added import instructions in `Documentation/Phase_3_Import_Notes.md`.
+- Confirmed MySQL client is installed locally.
+- Database execution is still pending because the local MySQL server requires credentials.
 
 ### Phase 1 - Understand the Dataset
 
@@ -57,7 +76,11 @@ Last completed phase: Phase 1 - Understand the Dataset
 | Data dictionary and relationships | `Documentation/Data_Dictionary.md` |
 | Reproducible validation script | `Validation/phase_1_data_validation.py` |
 | Validation result summary | `Validation/phase_1_validation_summary.md` |
+| MySQL database schema | `SQL/01_database_schema.sql` |
+| Phase 3 import instructions | `Documentation/Phase_3_Import_Notes.md` |
+| Staging import script | `SQL/phase_3_import_staging_data.sql` |
+| Staging verification script | `SQL/phase_3_verify_staging_import.sql` |
 
 ## Next Task
 
-Start Phase 2 by designing the MySQL schema in `SQL/01_database_schema.sql`.
+Run the Phase 3 MySQL scripts with valid MySQL credentials, then confirm all staging row-count checks pass.
