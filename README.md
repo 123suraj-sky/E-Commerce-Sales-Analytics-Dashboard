@@ -28,7 +28,7 @@ This project demonstrates the complete analytics workflow—from data preparatio
 
 ## 📂 Dataset
 
-**Dataset:** Olist Brazilian E-Commerce Public Dataset (Kaggle)
+**Dataset:** Olist Brazilian E-Commerce Public Dataset ([Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/ "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/"))
 
 The dataset contains multiple related tables representing an e-commerce platform, including:
 
