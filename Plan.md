@@ -1,5 +1,7 @@
 Great. Since you already have the environment ready, let's build this **like a real data analyst would**, not like a student completing an assignment.
 
+> don't check any files or folders present in .gitignore
+
 ## Overall Roadmap
 
 ```text
