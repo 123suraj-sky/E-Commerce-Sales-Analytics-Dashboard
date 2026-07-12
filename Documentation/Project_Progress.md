@@ -6,7 +6,7 @@ This file tracks what has been completed so far in the E-Commerce Sales Analytic
 
 Current phase: Phase 8 - Power BI Dashboard
 
-Last completed phase: Phase 7 - Business Analysis
+Last completed phase: Phase 11 - GitHub Polishing
 
 ## Phase Progress
 
@@ -20,9 +20,9 @@ Last completed phase: Phase 7 - Business Analysis
 | Phase 6 - Exploratory Data Analysis | Complete | Baseline EDA queries were run against the clean analytical tables and documented. |
 | Phase 7 - Business Analysis | Complete | Structured business-analysis queries were executed successfully and preliminary findings were documented. |
 | Phase 8 - Power BI Dashboard | In progress | Power BI reporting views and dashboard build guide are complete; the `.pbix` report still needs to be built in Power BI Desktop. |
-| Phase 9 - Business Insights | Not started | Business insights document exists but is empty. |
-| Phase 10 - Documentation | Not started | Final documentation is not complete yet. |
-| Phase 11 - GitHub Polishing | Not started | Repository polish/readiness work is pending. |
+| Phase 9 - Business Insights | Complete | Business insights and recommendations are documented from SQL analysis. |
+| Phase 10 - Documentation | Complete | README, final summary, ER diagram notes, progress tracking, and phase docs are updated; dashboard screenshots remain pending until the Power BI report is built. |
+| Phase 11 - GitHub Polishing | Complete | README and repository structure were polished for portfolio use; final dashboard screenshots can be added later. |
 
 ## Completed Work
 
@@ -102,6 +102,26 @@ Last completed phase: Phase 7 - Business Analysis
 - Added Power BI dashboard build guidance in `Documentation/Phase_8_PowerBI_Dashboard.md`.
 - Added `PowerBI/README.md` as the placeholder for the eventual `Dashboard.pbix` file.
 
+### Phase 9 - Business Insights
+
+- Expanded `Documentation/Business_Insights.md` into a full insight and recommendation document.
+- Added executive summary, KPI snapshot, revenue insights, customer insights, product/category insights, payment insights, delivery/geography insights, seller insights, dashboard implications, and final recommendations.
+- Clearly separated SQL-backed findings from Power BI visuals that will be built later.
+
+### Phase 10 - Documentation
+
+- Added `Documentation/Final_Project_Summary.md`.
+- Added `Documentation/ER_Diagram.md` with a Mermaid ER diagram for the analytical tables.
+- Updated `README.md` with clean formatting, project status, key KPIs, insights, workflow, run commands, documentation links, and known pending items.
+- Updated project progress tracking with current evidence files and next steps.
+
+### Phase 11 - GitHub Polishing
+
+- Replaced the corrupted README text with a clean portfolio-ready version.
+- Added clear repository structure and file-purpose explanations.
+- Added pending-item notes for the manually built `PowerBI/Dashboard.pbix` and future dashboard screenshots.
+- Kept the repository honest: the Power BI dashboard file is not marked as complete until it is built manually in Power BI Desktop.
+
 ### Phase 1 - Understand the Dataset
 
 - Reviewed the Olist Brazilian E-Commerce Public Dataset description.
@@ -151,7 +171,11 @@ Last completed phase: Phase 7 - Business Analysis
 | Phase 8 dashboard build guide | `Documentation/Phase_8_PowerBI_Dashboard.md` |
 | Phase 8 view verification output | `Documentation/Phase_8_PowerBI_Views_Output.txt` |
 | Power BI report folder notes | `PowerBI/README.md` |
+| Business insights | `Documentation/Business_Insights.md` |
+| Final project summary | `Documentation/Final_Project_Summary.md` |
+| ER diagram notes | `Documentation/ER_Diagram.md` |
+| Portfolio README | `README.md` |
 
 ## Next Task
 
-Open Power BI Desktop, connect to MySQL, import the `vw_powerbi_*` views, create the recommended DAX measures, and build the report pages from `Documentation/Phase_8_PowerBI_Dashboard.md`.
+When ready, open Power BI Desktop, connect to MySQL, import the `vw_powerbi_*` views, create the recommended DAX measures, build `PowerBI/Dashboard.pbix`, export dashboard screenshots to `Images/`, and add those screenshots to the README.
