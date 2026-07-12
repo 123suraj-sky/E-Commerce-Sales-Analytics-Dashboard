@@ -42,4 +42,23 @@ Use your own MySQL username if it is not `root`.
 - Clean analytical tables are intentionally left empty until data cleaning rules are defined.
 - `LOAD DATA LOCAL INFILE` may require MySQL server/client setting `local_infile` to be enabled.
 - The import script truncates staging tables first so it can be rerun safely for a fresh staging load.
+- The import script uses `ESCAPED BY ''` so literal backslashes inside review comments are not treated as escape characters.
 - Row-count verification should match the Phase 1 validation output before moving to data quality assessment.
+
+## Verification Result
+
+Phase 3 verification passed after import.
+
+| Staging table | Expected rows | Actual rows | Status |
+|---|---:|---:|---|
+| `stg_customers` | 99,441 | 99,441 | PASS |
+| `stg_orders` | 99,441 | 99,441 | PASS |
+| `stg_order_items` | 112,650 | 112,650 | PASS |
+| `stg_order_payments` | 103,886 | 103,886 | PASS |
+| `stg_order_reviews` | 99,224 | 99,224 | PASS |
+| `stg_products` | 32,951 | 32,951 | PASS |
+| `stg_sellers` | 3,095 | 3,095 | PASS |
+| `stg_geolocation` | 1,000,163 | 1,000,163 | PASS |
+| `stg_product_category_translation` | 71 | 71 | PASS |
+
+Required-value checks returned zero blank required values for all staging tables.

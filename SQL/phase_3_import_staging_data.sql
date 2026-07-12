@@ -31,6 +31,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_customers
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (customer_id, customer_unique_id, customer_zip_code_prefix, customer_city, customer_state);
@@ -39,6 +40,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_orders
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (order_id, customer_id, order_status, order_purchase_timestamp, order_approved_at, order_delivered_carrier_date, order_delivered_customer_date, order_estimated_delivery_date);
@@ -47,6 +49,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_order_items
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (order_id, order_item_id, product_id, seller_id, shipping_limit_date, price, freight_value);
@@ -55,6 +58,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_order_payments
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (order_id, payment_sequential, payment_type, payment_installments, payment_value);
@@ -63,6 +67,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_order_reviews
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (review_id, order_id, review_score, review_comment_title, review_comment_message, review_creation_date, review_answer_timestamp);
@@ -71,6 +76,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_products
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (product_id, product_category_name, product_name_lenght, product_description_lenght, product_photos_qty, product_weight_g, product_length_cm, product_height_cm, product_width_cm);
@@ -79,6 +85,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_sellers
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (seller_id, seller_zip_code_prefix, seller_city, seller_state);
@@ -87,6 +94,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_geolocation
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state);
@@ -95,6 +103,7 @@ LOAD DATA LOCAL INFILE 'C:/Users/DELL/Desktop/Projects/E-Commerce Sales Analytic
 INTO TABLE stg_product_category_translation
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY ''
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (product_category_name, product_category_name_english);
