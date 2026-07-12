@@ -4,9 +4,9 @@ This file tracks what has been completed so far in the E-Commerce Sales Analytic
 
 ## Current Status
 
-Current phase: Phase 5 - Data Cleaning
+Current phase: Phase 6 - Exploratory Data Analysis
 
-Last completed phase: Phase 4 - Data Quality Assessment
+Last completed phase: Phase 5 - Data Cleaning
 
 ## Phase Progress
 
@@ -16,7 +16,7 @@ Last completed phase: Phase 4 - Data Quality Assessment
 | Phase 2 - Database Design | Complete | MySQL database schema has been created in `SQL/01_database_schema.sql`. |
 | Phase 3 - Create/Import Data | Complete | Raw CSV files were imported into staging tables and row-count verification passed. |
 | Phase 4 - Data Quality Assessment | Complete | Database-level staging quality checks were run and documented. |
-| Phase 5 - Data Cleaning | Not started | Cleaning SQL file exists but is empty. |
+| Phase 5 - Data Cleaning | Complete | Staging data was cleaned and loaded into analytical tables. |
 | Phase 6 - Exploratory Data Analysis | Not started | No EDA queries or outputs yet. |
 | Phase 7 - Business Analysis | Not started | Business queries file exists but is empty. |
 | Phase 8 - Power BI Dashboard | Not started | Power BI folder exists, but dashboard work is not documented yet. |
@@ -60,6 +60,20 @@ Last completed phase: Phase 4 - Data Quality Assessment
 - Confirmed numeric fields, date formats, order statuses, review scores, prices, freight values, payment values, and geolocation coordinate ranges are valid.
 - Identified cleaning work for duplicate review ids, missing product metadata, untranslated product categories, missing geolocation zip prefixes, repeated geolocation observations, and delivery chronology anomalies.
 
+### Phase 5 - Data Cleaning
+
+- Added cleaning script in `SQL/03_data_cleaning.sql`.
+- Added cleaning verification script in `SQL/phase_5_verify_cleaning.sql`.
+- Loaded clean analytical tables from staging tables.
+- Converted blank strings to `NULL` where appropriate.
+- Converted staging text fields into analytical data types.
+- Added translations for `pc_gamer` and `portateis_cozinha_e_preparadores_de_alimentos`.
+- Aggregated raw geolocation observations into `geolocation_zip_prefixes`.
+- Preserved duplicate review source ids while using `review_key` as the analytical primary key.
+- Preserved date chronology anomalies for later analysis instead of silently rewriting them.
+- Verified clean row counts and core relationships.
+- Documented cleaning decisions in `Documentation/Phase_5_Data_Cleaning.md`.
+
 ### Phase 1 - Understand the Dataset
 
 - Reviewed the Olist Brazilian E-Commerce Public Dataset description.
@@ -97,7 +111,10 @@ Last completed phase: Phase 4 - Data Quality Assessment
 | Staging verification script | `SQL/phase_3_verify_staging_import.sql` |
 | Phase 4 data quality script | `SQL/phase_4_data_quality_assessment.sql` |
 | Phase 4 data quality findings | `Documentation/Phase_4_Data_Quality_Assessment.md` |
+| Phase 5 cleaning script | `SQL/03_data_cleaning.sql` |
+| Phase 5 cleaning verification | `SQL/phase_5_verify_cleaning.sql` |
+| Phase 5 cleaning documentation | `Documentation/Phase_5_Data_Cleaning.md` |
 
 ## Next Task
 
-Start Phase 5 by writing cleaning rules in `SQL/03_data_cleaning.sql`.
+Start Phase 6 by writing exploratory SQL queries against the clean analytical tables.
