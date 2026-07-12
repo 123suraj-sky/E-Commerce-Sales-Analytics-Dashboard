@@ -4,9 +4,9 @@ This file tracks what has been completed so far in the E-Commerce Sales Analytic
 
 ## Current Status
 
-Current phase: Phase 4 - Data Quality Assessment
+Current phase: Phase 5 - Data Cleaning
 
-Last completed phase: Phase 3 - Create/Import Data
+Last completed phase: Phase 4 - Data Quality Assessment
 
 ## Phase Progress
 
@@ -15,7 +15,7 @@ Last completed phase: Phase 3 - Create/Import Data
 | Phase 1 - Understand the Dataset | Complete | Dataset description, data dictionary, keys, relationships, and validation checks are complete. |
 | Phase 2 - Database Design | Complete | MySQL database schema has been created in `SQL/01_database_schema.sql`. |
 | Phase 3 - Create/Import Data | Complete | Raw CSV files were imported into staging tables and row-count verification passed. |
-| Phase 4 - Data Quality Assessment | Not started | Phase 1 validation exists, but database-level quality checks are not started. |
+| Phase 4 - Data Quality Assessment | Complete | Database-level staging quality checks were run and documented. |
 | Phase 5 - Data Cleaning | Not started | Cleaning SQL file exists but is empty. |
 | Phase 6 - Exploratory Data Analysis | Not started | No EDA queries or outputs yet. |
 | Phase 7 - Business Analysis | Not started | Business queries file exists but is empty. |
@@ -48,6 +48,17 @@ Last completed phase: Phase 3 - Create/Import Data
 - Fixed CSV loading by disabling backslash escaping with `ESCAPED BY ''`, because one review comment ends with a literal backslash.
 - Verified all staging row counts against Phase 1 expected counts.
 - Verified required staging key/date/value fields have zero blank values.
+
+### Phase 4 - Data Quality Assessment
+
+- Added data quality assessment script in `SQL/phase_4_data_quality_assessment.sql`.
+- Ran staging quality checks in MySQL.
+- Verified row counts still match expected values.
+- Profiled blank values, duplicate keys, full-row duplicates, relationship coverage, type conversion readiness, domain validity, date formats, and date chronology.
+- Documented findings in `Documentation/Phase_4_Data_Quality_Assessment.md`.
+- Confirmed core transactional relationships have zero orphan rows.
+- Confirmed numeric fields, date formats, order statuses, review scores, prices, freight values, payment values, and geolocation coordinate ranges are valid.
+- Identified cleaning work for duplicate review ids, missing product metadata, untranslated product categories, missing geolocation zip prefixes, repeated geolocation observations, and delivery chronology anomalies.
 
 ### Phase 1 - Understand the Dataset
 
@@ -84,7 +95,9 @@ Last completed phase: Phase 3 - Create/Import Data
 | Phase 3 import instructions | `Documentation/Phase_3_Import_Notes.md` |
 | Staging import script | `SQL/phase_3_import_staging_data.sql` |
 | Staging verification script | `SQL/phase_3_verify_staging_import.sql` |
+| Phase 4 data quality script | `SQL/phase_4_data_quality_assessment.sql` |
+| Phase 4 data quality findings | `Documentation/Phase_4_Data_Quality_Assessment.md` |
 
 ## Next Task
 
-Start Phase 4 by running database-level data quality checks for missing values, duplicates, invalid dates, blank strings, and orphan relationships.
+Start Phase 5 by writing cleaning rules in `SQL/03_data_cleaning.sql`.
