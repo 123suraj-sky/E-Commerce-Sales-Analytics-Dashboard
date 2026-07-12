@@ -19,7 +19,7 @@ Last completed phase: Phase 7 - Business Analysis
 | Phase 5 - Data Cleaning | Complete | Staging data was cleaned and loaded into analytical tables. |
 | Phase 6 - Exploratory Data Analysis | Complete | Baseline EDA queries were run against the clean analytical tables and documented. |
 | Phase 7 - Business Analysis | Complete | Structured business-analysis queries were executed successfully and preliminary findings were documented. |
-| Phase 8 - Power BI Dashboard | Not started | Power BI folder exists, but dashboard work is not documented yet. |
+| Phase 8 - Power BI Dashboard | In progress | Power BI reporting views and dashboard build guide are complete; the `.pbix` report still needs to be built in Power BI Desktop. |
 | Phase 9 - Business Insights | Not started | Business insights document exists but is empty. |
 | Phase 10 - Documentation | Not started | Final documentation is not complete yet. |
 | Phase 11 - GitHub Polishing | Not started | Repository polish/readiness work is pending. |
@@ -92,6 +92,16 @@ Last completed phase: Phase 7 - Business Analysis
 - Captured query output in `Documentation/Phase_7_Business_Analysis_Output.txt`.
 - Added preliminary findings to `Documentation/Business_Insights.md`.
 
+### Phase 8 - Power BI Dashboard
+
+- Added 9 Power BI reporting views in `SQL/05_views.sql`.
+- Created a reporting semantic layer with an enriched item-level fact view plus dashboard, monthly KPI, category, customer-market, seller, delivery, payment, and seller-category risk views.
+- Executed `SQL/05_views.sql` successfully against MySQL.
+- Verified the reporting views with row-count and KPI smoke tests.
+- Captured verification output in `Documentation/Phase_8_PowerBI_Views_Output.txt`.
+- Added Power BI dashboard build guidance in `Documentation/Phase_8_PowerBI_Dashboard.md`.
+- Added `PowerBI/README.md` as the placeholder for the eventual `Dashboard.pbix` file.
+
 ### Phase 1 - Understand the Dataset
 
 - Reviewed the Olist Brazilian E-Commerce Public Dataset description.
@@ -137,7 +147,11 @@ Last completed phase: Phase 7 - Business Analysis
 | Phase 7 business analysis script | `SQL/04_business_queries.sql` |
 | Phase 7 business analysis notes | `Documentation/Phase_7_Business_Analysis.md` |
 | Phase 7 query output | `Documentation/Phase_7_Business_Analysis_Output.txt` |
+| Phase 8 Power BI reporting views | `SQL/05_views.sql` |
+| Phase 8 dashboard build guide | `Documentation/Phase_8_PowerBI_Dashboard.md` |
+| Phase 8 view verification output | `Documentation/Phase_8_PowerBI_Views_Output.txt` |
+| Power BI report folder notes | `PowerBI/README.md` |
 
 ## Next Task
 
-Start Phase 8 by designing the Power BI dashboard pages and mapping each visual to the Phase 7 business-analysis queries.
+Open Power BI Desktop, connect to MySQL, import the `vw_powerbi_*` views, create the recommended DAX measures, and build the report pages from `Documentation/Phase_8_PowerBI_Dashboard.md`.

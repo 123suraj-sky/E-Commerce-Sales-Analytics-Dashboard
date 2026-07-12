@@ -1,0 +1,174 @@
+mysql> source SQL/05_views.sql
+Database changed
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT TABLE_NAME FROM information_schema.views WHERE table_schema = 'ecommerce_sales' AND table_name LIKE 'vw_powerbi_%' ORDER BY TABLE_NAME;
++---------------------------------+
+| TABLE_NAME                      |
++---------------------------------+
+| vw_powerbi_category_performance |
+| vw_powerbi_customer_markets     |
+| vw_powerbi_dashboard_kpis       |
+| vw_powerbi_delivery_performance |
+| vw_powerbi_monthly_kpis         |
+| vw_powerbi_order_items_enriched |
+| vw_powerbi_payment_methods      |
+| vw_powerbi_seller_category_risk |
+| vw_powerbi_seller_performance   |
++---------------------------------+
+9 rows in set (0.02 sec)
+
+mysql> SELECT COUNT(*) AS enriched_item_rows FROM vw_powerbi_order_items_enriched;
++--------------------+
+| enriched_item_rows |
++--------------------+
+|             112650 |
++--------------------+
+1 row in set (7.73 sec)
+
+mysql> SELECT * FROM vw_powerbi_dashboard_kpis;
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+| total_orders | total_items_sold | product_revenue | freight_revenue | gross_item_value | avg_order_value | freight_share_pct | unique_customers | repeat_customer_pct | avg_review_score |
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+|        98666 |           112650 |     13591643.70 |      2251909.54 |      15843553.24 |          160.58 |             14.21 |            95420 |                7.93 |             4.03 |
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+1 row in set (7.09 sec)
+
+mysql> SELECT COUNT(*) AS monthly_kpi_rows FROM vw_powerbi_monthly_kpis;
++------------------+
+| monthly_kpi_rows |
++------------------+
+|               24 |
++------------------+
+1 row in set (2.84 sec)
+
+mysql> SELECT COUNT(*) AS category_rows FROM vw_powerbi_category_performance;
++---------------+
+| category_rows |
++---------------+
+|            74 |
++---------------+
+1 row in set (3.39 sec)
+
+mysql> notee
+mysql> source SQL/05_views.sql
+Database changed
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT TABLE_NAME FROM information_schema.views WHERE table_schema = 'ecommerce_sales' AND table_name LIKE 'vw_powerbi_%' ORDER BY TABLE_NAME;
++---------------------------------+
+| TABLE_NAME                      |
++---------------------------------+
+| vw_powerbi_category_performance |
+| vw_powerbi_customer_markets     |
+| vw_powerbi_dashboard_kpis       |
+| vw_powerbi_delivery_performance |
+| vw_powerbi_monthly_kpis         |
+| vw_powerbi_order_items_enriched |
+| vw_powerbi_payment_methods      |
+| vw_powerbi_seller_category_risk |
+| vw_powerbi_seller_performance   |
++---------------------------------+
+9 rows in set (0.01 sec)
+
+mysql> SELECT COUNT(*) AS enriched_item_rows FROM vw_powerbi_order_items_enriched;
++--------------------+
+| enriched_item_rows |
++--------------------+
+|             112650 |
++--------------------+
+1 row in set (7.73 sec)
+
+mysql> SELECT * FROM vw_powerbi_dashboard_kpis;
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+| total_orders | total_items_sold | product_revenue | freight_revenue | gross_item_value | avg_order_value | freight_share_pct | unique_customers | repeat_customer_pct | avg_review_score |
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+|        98666 |           112650 |     13591643.70 |      2251909.54 |      15843553.24 |          160.58 |             14.21 |            96096 |                3.12 |             4.09 |
++--------------+------------------+-----------------+-----------------+------------------+-----------------+-------------------+------------------+---------------------+------------------+
+1 row in set (1.83 sec)
+
+mysql> SELECT COUNT(*) AS monthly_kpi_rows FROM vw_powerbi_monthly_kpis;
++------------------+
+| monthly_kpi_rows |
++------------------+
+|               24 |
++------------------+
+1 row in set (2.73 sec)
+
+mysql> SELECT COUNT(*) AS category_rows FROM vw_powerbi_category_performance;
++---------------+
+| category_rows |
++---------------+
+|            74 |
++---------------+
+1 row in set (3.36 sec)
+
+mysql> notee
