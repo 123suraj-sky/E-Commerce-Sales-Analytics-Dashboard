@@ -4,9 +4,9 @@ This file tracks what has been completed so far in the E-Commerce Sales Analytic
 
 ## Current Status
 
-Current phase: Phase 6 - Exploratory Data Analysis
+Current phase: Phase 7 - Business Analysis
 
-Last completed phase: Phase 5 - Data Cleaning
+Last completed phase: Phase 6 - Exploratory Data Analysis
 
 ## Phase Progress
 
@@ -17,7 +17,7 @@ Last completed phase: Phase 5 - Data Cleaning
 | Phase 3 - Create/Import Data | Complete | Raw CSV files were imported into staging tables and row-count verification passed. |
 | Phase 4 - Data Quality Assessment | Complete | Database-level staging quality checks were run and documented. |
 | Phase 5 - Data Cleaning | Complete | Staging data was cleaned and loaded into analytical tables. |
-| Phase 6 - Exploratory Data Analysis | Not started | No EDA queries or outputs yet. |
+| Phase 6 - Exploratory Data Analysis | Complete | Baseline EDA queries were run against the clean analytical tables and documented. |
 | Phase 7 - Business Analysis | Not started | Business queries file exists but is empty. |
 | Phase 8 - Power BI Dashboard | Not started | Power BI folder exists, but dashboard work is not documented yet. |
 | Phase 9 - Business Insights | Not started | Business insights document exists but is empty. |
@@ -74,6 +74,15 @@ Last completed phase: Phase 5 - Data Cleaning
 - Verified clean row counts and core relationships.
 - Documented cleaning decisions in `Documentation/Phase_5_Data_Cleaning.md`.
 
+### Phase 6 - Exploratory Data Analysis
+
+- Added EDA script in `SQL/phase_6_exploratory_analysis.sql`.
+- Ran baseline exploratory queries against clean analytical tables.
+- Profiled dataset size, date coverage, order statuses, order size, revenue, payment methods, customer repeat behavior, geography, categories, reviews, and delivery context.
+- Fixed product category translation cleanup by removing carriage-return characters from English category names during Phase 5 cleaning.
+- Reran Phase 5 verification after the category text fix.
+- Documented EDA findings in `Documentation/Phase_6_Exploratory_Data_Analysis.md`.
+
 ### Phase 1 - Understand the Dataset
 
 - Reviewed the Olist Brazilian E-Commerce Public Dataset description.
@@ -114,7 +123,9 @@ Last completed phase: Phase 5 - Data Cleaning
 | Phase 5 cleaning script | `SQL/03_data_cleaning.sql` |
 | Phase 5 cleaning verification | `SQL/phase_5_verify_cleaning.sql` |
 | Phase 5 cleaning documentation | `Documentation/Phase_5_Data_Cleaning.md` |
+| Phase 6 EDA script | `SQL/phase_6_exploratory_analysis.sql` |
+| Phase 6 EDA findings | `Documentation/Phase_6_Exploratory_Data_Analysis.md` |
 
 ## Next Task
 
-Start Phase 6 by writing exploratory SQL queries against the clean analytical tables.
+Start Phase 7 by writing structured business analysis queries in `SQL/04_business_queries.sql`.

@@ -38,7 +38,7 @@ INSERT INTO product_category_translation (
 )
 SELECT
     TRIM(product_category_name),
-    TRIM(product_category_name_english)
+    TRIM(REPLACE(product_category_name_english, CHAR(13), ''))
 FROM stg_product_category_translation
 WHERE product_category_name <> ''
 UNION ALL

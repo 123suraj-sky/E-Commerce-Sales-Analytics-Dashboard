@@ -24,6 +24,7 @@ July 12, 2026
 ### Product Categories
 
 - Loaded the original product category translation table.
+- Removed carriage-return characters from English category names introduced by CSV line endings.
 - Added the two missing category translations found in Phase 4:
 
 | Source category | Clean English category |
