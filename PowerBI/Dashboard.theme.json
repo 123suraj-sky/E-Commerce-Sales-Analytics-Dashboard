@@ -1,0 +1,44 @@
+{
+  "name": "E-Commerce Sales Analytics Dashboard",
+  "dataColors": [
+    "#1B7F5A",
+    "#2D6CDF",
+    "#D64545",
+    "#D98E1B",
+    "#3C4A5D",
+    "#5B8C62",
+    "#6B7C93",
+    "#9B9FB1"
+  ],
+  "background": "#F7F5F0",
+  "foreground": "#1D2733",
+  "tableAccent": "#1B7F5A",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "fontFamily": "Aptos",
+            "fontSize": 11,
+            "color": { "solid": { "color": "#1D2733" } }
+          }
+        ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#1D2733" } }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "labelColor": { "solid": { "color": "#1D2733" } }
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": { "solid": { "color": "#1D2733" } }
+          }
+        ]
+      }
+    }
+  }
+}

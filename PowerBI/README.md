@@ -8,6 +8,12 @@ Expected report file:
 Build guide:
 `../Documentation/Phase_8_PowerBI_Dashboard.md`
 
+Implementation guide:
+`Dashboard_Build_Guide.md`
+
+Theme file:
+`Dashboard.theme.json`
+
 Reporting views:
 `../SQL/05_views.sql`
 
